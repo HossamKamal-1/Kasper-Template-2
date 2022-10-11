@@ -52,5 +52,36 @@ a {
 }
 /* End Global rules */
 /* Start Header */
+header {
 
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container .logo{
+  height: 40px;
+}
+header  nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+header .container  nav ul  {
+  display: flex;
+  
+}
+header .container  nav ul li a {
+  display: block;
+  color: white;
+  font-size: 14px;
+  padding: 40px 10px;
+  text-transform: uppercase;
+}
+header .form {
+  
+}
 /* End Header */
