@@ -5,11 +5,63 @@
   --main-links-hover-color: #19c8fa;
   --transparent-color: rgb(15 116 143 / 70%);
   --selection-color: black;
+  --section-padding: 100px;
+  --main-paragraph-color: #777;
 }
 ::selection {
   background-color: var(--selection-color);
 }
 /* End Variables */
+/* Start Components */
+  /*  Start main-heading component */
+.main-heading {
+  text-align: center;
+  margin-bottom: 100px;
+}
+.main-heading .main-heading-title {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 36px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.main-heading .main-heading-title::before,
+.main-heading .main-heading-title::after
+{
+  --circle-border-color: #333;
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-heading .main-heading-title::before {
+  height: 2px;
+  width: 120px;
+  background-color: var(--circle-border-color);
+  bottom: -16px;
+}
+.main-heading .main-heading-title::after {
+  --circle-size: 16px;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border: 2px solid var(--circle-border-color);
+  border-radius: 50%;
+  background: white;
+  bottom: calc(-16px - var(--circle-size) / 2);
+
+}
+.main-heading .main-heading-desc {
+  color: var(--main-paragraph-color);
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  line-height: 2;
+}
+  /*  End main-heading component */
+
+
+/* End Components */
 /* Start Global rules */
 * {
   -webkit-box-sizing: border-box;
@@ -256,3 +308,44 @@ header .form i {
   background-color: var(--main-color);
 }
 /* End Landing section */
+/* Start Services section */
+.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.services .services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 70px;
+}
+.services .services-container .col .services-content {
+  margin-bottom: 60px;
+  display: flex;
+  
+}
+.services .services-container .col .services-content i {
+  flex-basis: 130px;
+}
+.services .services-container .col .services-content .services-text {
+  flex: 1;
+}
+@media (max-width: 767px) {
+  .services .services-container .col .services-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .services .services-container .col .services-content i {
+    flex-basis: 70px;
+  }
+}
+.services .services-container .col .services-content .services-text h3 {
+  font-weight: bold;
+  color: var(--main-color);
+  margin-bottom: 18px;
+}
+.services .services-container .col .services-content .services-text p {
+  line-height: 2;
+  color: var(--main-paragraph-color);
+  font-size: 14px;
+}
+/* End Services section */

@@ -1,11 +1,27 @@
+/* Start Padding */
+.pd-30 {
+  padding: 30px;
+}
+.pd-60 {
+  padding: 30px;
+}
+/* End Padding */
+
+/* Start Flex */
 .flex-center {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+/* End Flex */
+
+/* Start Cursor */
 .c-pointer {
   cursor: pointer;
 }
+/* End Cursor */
+
+/* Start position centering */
 .v-p-center,
 .h-p-center {
   position: absolute;
@@ -18,3 +34,5 @@
   left: 50%;
   transform: translateX(-50%);
 }
+/* End position centering */
+
