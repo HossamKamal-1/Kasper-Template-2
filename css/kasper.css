@@ -1,8 +1,13 @@
 /* Start Variables */
 :root {
-  --main-color: orange;
+  --main-color: #19c8fa;
   --main-links-color: white;
-  --main-links-hover-color: blue;
+  --main-links-hover-color: #19c8fa;
+  --transparent-color: rgb(15 116 143 / 70%);
+  --selection-color: black;
+}
+::selection {
+  background-color: var(--selection-color);
 }
 /* End Variables */
 /* Start Global rules */
@@ -20,13 +25,20 @@ html {
 }
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: burlywood;
 }
 ul {
   list-style: none;
 }
 a {
   text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 .container {
   margin-left: auto;
@@ -54,7 +66,12 @@ a {
 }
 /* End Global rules */
 /* Start Header */
-
+header {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  width: 100%;
+}
 header .container {
   position: relative;
   min-height: 97.1px;
@@ -68,7 +85,10 @@ header .container::after {
   bottom: 0;
 
 }
-header .container .logo{
+header .container a {
+  font-size: 0; /* To fix font-size of image problem */
+}
+header .container a .logo{
   height: 40px;
 }
 header  nav {
@@ -81,6 +101,9 @@ header  nav {
 header  nav .toggle-menu {
   font-size: 20px;
   color: var(--main-links-color);
+}
+header  nav .toggle-menu:hover {
+  color: var(--main-links-hover-color);
 }
 @media (min-width: 768px) {
   header  nav .toggle-menu {
@@ -99,8 +122,6 @@ header .container  nav ul  {
   header .container  nav ul {
     display: none;
   }
-  
-  
 }
 header .container  nav ul li a {
   display: block;
@@ -125,17 +146,113 @@ header .form {
   border-left: 1px solid var(--main-links-color);;
   position: relative;
 }
+header .form .search-icon:hover {
+  color: var(--main-links-hover-color);
+}
 @media(max-width: 767px) {
   header .form {
     margin-left: 25px;
   }
+  header  nav .toggle-menu:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  header  nav .toggle-menu:hover + ul li a{
+    padding: 20px;
+  }
 }
 header .form i {
-  position: absolute;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 20px;
   color: var(--main-links-color);
 }
 /* End Header */
+/* Start Landing section */
+.landing {
+  min-height: 100vh;
+  background-color: azure;
+  background-image: url(../images/landing.jpg);
+  background-size: cover;
+  position: relative;
+}
+.landing .overlay {
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 40%);
+}
+.landing .text {
+  width: 60%;
+  left: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--transparent-color);
+  color: white;
+}
+.landing .text .text-content {
+  max-width: 500px;
+}
+@media (max-width: 767px) {
+  .landing .text {
+    width: 100%;
+  }
+  .landing .text .text-content {
+    max-width: 100%;
+  }
+}
+.landing .text .text-content .landing-title {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.landing .text .text-content .landing-desc {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.landing .change-background {
+  color: white;
+}
+.landing .change-background:hover {
+  color: var(--main-links-hover-color);
+}
+@media (max-width: 767px) {
+  .landing .change-background {
+    display: none;
+  }
+}
+.landing  i:first-of-type {
+  left: 15px;
+}
+.landing  i:last-of-type {
+  right: 15px;
+}
+.landing .bullets {
+  bottom: 30px;
+  display: flex;
+  width: 110px;
+  justify-content: space-around;
+}
+.landing .bullets li {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.landing .bullets li:hover,
+.landing .bullets li.active {
+  border-color: var(--main-color);
+  background-color: var(--main-color);
+}
+/* End Landing section */

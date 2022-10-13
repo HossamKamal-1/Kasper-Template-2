@@ -18,13 +18,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Start Header -->
   <header>
     <div class="container flex-center">
       <a href="#">
         <img src="images/logo.png" alt=""  class="logo" />
       </a>
       <nav>
-        <i class="fas fa-bars toggle-menu"></i>
+        <i class="fas fa-bars toggle-menu c-pointer"></i>
         <ul>
           <li><a href="#" class="active">Home</a></li>
           <li><a href="#">Services</a></li>
@@ -35,9 +36,29 @@
         </ul>
       </nav>
       <div class="form">
-        <i class="fas fa-search"></i>
+        <i class="fas fa-search search-icon c-pointer v-p-center"></i>
       </div>
     </div>
   </header>
+  <!-- End Header -->
+  <!-- Start Landing section -->
+  <section class="landing">
+    <div class="overlay"></div>
+    <div class="text v-p-center">
+      <div class="text-content">
+        <h2 class="landing-title">hello world! <br /> we are kasper,we make art.</h2>
+        <p class="landing-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ratione ad reiciendis, quas quis ullam? Dolor provident tempore dolorum reprehenderit.</p>
+      </div>
+    </div>
+    <i class="fas fa-angle-left fa-2x change-background c-pointer v-p-center"></i>
+    <i class="fas fa-angle-right fa-2x change-background c-pointer v-p-center"></i>
+    <ul class="bullets h-p-center">
+      <li class="c-pointer"></li>
+      <li class="active c-pointer"></li>
+      <li class="c-pointer"></li>
+    </ul>
+  </section>
+  <!-- End Landing section -->
+
 </body>
 </html>
