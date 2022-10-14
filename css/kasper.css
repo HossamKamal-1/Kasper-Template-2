@@ -315,7 +315,7 @@ header .form i {
 }
 .services .services-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 70px;
 }
 .services .services-container .col .services-content {
@@ -349,6 +349,11 @@ header .form i {
   line-height: 2;
   color: var(--main-paragraph-color);
   font-size: 14px;
+}
+@media (max-width: 767px) {
+  .services .services-container .col .services-content .services-text p {
+    max-width: 100%;
+  }
 }
 /* End Services section */
 /* Start Features section */
@@ -400,6 +405,7 @@ header .form i {
   }
   .features .image img {
     position: static;
+    max-width: 100%;
   }
 }
 .features .text h2 {
@@ -419,3 +425,90 @@ header .form i {
   top: 1px;
 }
 /* End Features section */
+/* Start Portfolio section */
+.portfolio {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.portfolio .shuffle {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.portfolio .shuffle li {
+  padding: 10px;
+}
+.portfolio .shuffle li.active {
+  background-color: var(--main-color);
+  color: white;
+}
+.portfolio .image-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.portfolio .image-container .box {
+  position: relative;
+  overflow: hidden;
+  font-size: 0; /* to fix image container fontsize problem */
+
+}
+@media (min-width: 767px ) {
+  .portfolio .image-container .box {
+    flex-basis: 50%;
+  }
+}
+@media (min-width:1199px ) {
+  .portfolio .image-container .box {
+    flex-basis: 25%;
+  }
+}
+@media (max-width: 280px) {
+  .portfolio .shuffle li {
+    padding: 5px;
+  }
+}
+.portfolio .image-container .box img {
+  max-width: 100%;
+  transition:  0.3s;
+}
+.portfolio .image-container .box .caption {
+  position: absolute;
+  bottom: -100%;
+  left:0;
+  transition: bottom 0.3s, width 0.3s 0.15s;
+  background-color: white;
+  width: 50%;
+  padding: 15px;
+  font-size: initial;
+}
+.portfolio .image-container .box:hover img {
+  transform: rotate(3deg) scale(1.1);
+  filter: grayscale(50%);
+}
+.portfolio .image-container .box:hover .caption {
+  bottom: 0;
+  width: 100%;
+}
+@media (max-width: 280px) {
+  .portfolio .image-container .box .caption {
+    width: 60%;
+  }
+}
+.portfolio .image-container .box .caption h4 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.portfolio .image-container .box .caption p{
+  color: var(--main-color);
+}
+.portfolio .more {
+  padding: 10px 30px;
+  background-color: var(--main-color);
+  color: white;
+  display: block;
+  width: fit-content;
+  margin: 40px auto 0;
+  text-transform: uppercase;
+}
+/* End Portfolio section */
