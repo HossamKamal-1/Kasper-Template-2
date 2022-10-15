@@ -58,8 +58,29 @@
   margin: 0 auto;
   line-height: 2;
 }
+
   /*  End main-heading component */
 
+  /*  Start bullets component */
+.bullets {
+  bottom: 30px;
+  display: flex;
+  width: 110px;
+  justify-content: space-around;
+}
+.bullets li {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.bullets li:hover,
+.bullets li.active {
+  border-color: var(--main-color);
+  background-color: var(--main-color);
+}
+  /*  End bullets component */
 
 /* End Components */
 /* Start Global rules */
@@ -288,24 +309,6 @@ header .form i {
 }
 .landing  i:last-of-type {
   right: 15px;
-}
-.landing .bullets {
-  bottom: 30px;
-  display: flex;
-  width: 110px;
-  justify-content: space-around;
-}
-.landing .bullets li {
-  width: 20px;
-  height: 20px;
-  border: 1px solid white;
-  border-radius: 50%;
-  transition: 0.3s;
-}
-.landing .bullets li:hover,
-.landing .bullets li.active {
-  border-color: var(--main-color);
-  background-color: var(--main-color);
 }
 /* End Landing section */
 /* Start Services section */
@@ -597,3 +600,183 @@ header .form i {
   
 }
 /* End About section */
+/* Start Statistics section */
+.stat {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url(../images/stats.png);
+  background-size: cover;
+  position: relative;
+  text-align: center;
+}
+.stat::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0 0 0 / 70%);
+}
+.stat .stat-container{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  background-color: var(--transparent-color);
+
+}
+.stat .stat-container .stat-box{
+  padding: 50px;
+}
+@media (max-width: 767px) {
+  .stat .stat-container .stat-box {
+    flex-basis: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .stat .stat-container .stat-box {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .stat .stat-container .stat-box {
+    flex-basis: 25%;
+  }
+}
+.stat .stat-container .stat-box i{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  margin: 0 auto 30px;
+}
+.stat .stat-container .stat-box .text {
+  font-size: 50px;
+  font-weight: bold;
+
+}
+.stat .stat-container .stat-box .text  p{
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 100;
+}
+/* End Statistics section */
+/* Start Skills and testinomial section */
+.skill-sec {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.skill-sec .container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .skill-sec .container > div{
+    flex-basis: 45%;
+  }
+}
+@media (max-width: 767px) {
+  .skill-sec .container .skills {
+    flex-basis: 100%;
+  }
+  
+}
+.skill-sec .container > div > h3{
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #777;
+  font-weight: bold;
+  text-align: center;
+
+}
+.skill-sec .container > div > p{
+  color: #222;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+.skill-sec .container .testimonial .testimonial-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.skill-sec .container .testimonial .testimonial-content  img {
+  width: 80px;
+  border-radius: 50%;
+}
+.skill-sec .container .testimonial .testimonial-content .text {
+  flex-basis: 73%;
+  border-bottom: 1px solid #777;
+  line-height: 1.8;
+  font-size: 14px;
+}
+.skill-sec .container .testimonial  .testimonial-content .text  p{
+  text-align: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #777;
+}
+@media (max-width: 992px) {
+  .skill-sec .container .testimonial .testimonial-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skill-sec .container .testimonial .testimonial-content .text {
+    margin-top: 10px;
+  }
+}
+.skill-sec .bullets li {
+  border-color: #aaa;
+  margin-left: 8px;
+}
+.skill-sec .bullets {
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 60px;
+}
+.skill-sec .skills .prog-holder {
+  margin-bottom: 30px;
+}
+.skill-sec .skills .prog-holder h4{
+  font-weight: normal;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.skill-sec .skills .prog-holder .prog{
+  background-color: #dedadc;
+  height: 30px;
+}
+.skill-sec .skills .prog-holder .prog span {
+  display: block;
+  height: 100%;
+  background-color: var(--main-color);
+  position: relative;
+}
+.skill-sec .skills .prog-holder .prog span::before {
+  content: attr(data-progress);
+  position: absolute;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: #222;
+  color: white;
+  right: -21px;
+  top: -39px;
+}
+.skill-sec .skills .prog-holder .prog span::after {
+  content: "";
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #222 transparent  transparent;
+  right: -10px;
+  top: -12px
+}
+/* End Skills and testinomial section */
