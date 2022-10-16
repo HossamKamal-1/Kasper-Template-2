@@ -82,6 +82,31 @@
 }
   /*  End bullets component */
 
+  /* Start Fade-in-out transition on hover component */
+  .fade-in-out-transition {
+    position: relative;
+    z-index: 1;
+  }
+  .fade-in-out-transition::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    transform-origin: center;
+    transform:scale(0.3);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s;
+    z-index: -1;
+  }
+  .fade-in-out-transition:hover::before {
+    opacity: 1;
+    transform:scale(1);
+  }
+  /* End Fade-in-out transition on hover component */
+
 /* End Components */
 /* Start Global rules */
 * {
@@ -780,3 +805,165 @@ header .form i {
   top: -12px
 }
 /* End Skills and testinomial section */
+/* Start Quote section */
+.quote {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url(../images/quote.jpg);
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.quote::before {
+  content: "";
+  position: absolute;
+  left:0;
+  top:0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0 0 0 / 70%);
+}
+.quote .container {
+  position: relative;
+}
+.quote q {
+  font-size: 2.5vmax;
+  text-transform: uppercase;
+  display: block;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.quote q::before,
+.quote q::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  position: relative;
+  top: -5px;
+}
+.quote q::before {
+  content:"\f10d";
+  margin-right: 10px;
+}
+.quote q::after {
+  content:"\f10e";
+  margin-left: 10px;
+}
+.quote q + span{
+  text-transform: capitalize;
+}
+/* End Quote section */
+/* Start Pricing section */
+.pricing {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.pricing .pricing-plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+  grid-gap: 40px;
+}
+.pricing .pricing-plans .pricing-plan{
+  text-align: center;
+  background-color: azure;
+}
+.pricing .pricing-plans .pricing-plan .head{
+  padding: 30px 50px;
+  text-transform: uppercase;
+  border-top: 2px solid var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+}
+.pricing .pricing-plans .pricing-plan .head .plan-name{
+  font-weight: normal;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 12px;
+  color: #333;
+}
+.pricing .pricing-plans .pricing-plan .head .plan-price{
+  font-size: 45px;
+}
+.pricing .pricing-plans .pricing-plan .head .plan-price::before,
+.pricing .pricing-plans .pricing-plan .head .plan-price::after {
+  font-size: 16px;
+  position: relative;
+  font-weight: normal;
+
+}
+.pricing .pricing-plans .pricing-plan .head .plan-price::before {
+  content: "$";
+  top: -20px;
+  margin-right: 15px;
+}
+.pricing .pricing-plans .pricing-plan .head .plan-price::after {
+  content: "/mo";
+  font-variant: small-caps;
+  right: -10px
+}
+.pricing .pricing-plans .pricing-plan .plan-features{
+  border-bottom: 2px solid var(--main-color);
+}
+.pricing .pricing-plans .pricing-plan .plan-features li{
+  padding: 20px 40px;
+  color: #333;
+  font-weight: normal;
+  position: relative;
+}
+.pricing .pricing-plans .pricing-plan .plan-features li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  width: 120px;
+  height: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+
+}
+.pricing .pricing-plans .pricing-plan .foot{
+  padding: 40px 30px;
+  border-bottom: 2px solid var(--main-color)
+}
+.pricing .pricing-plans .pricing-plan .foot .buy-plan-link{
+  border: 1px solid var(--main-color);
+  padding: 10px 20px;
+  color:#333;
+  position: relative;
+  z-index: 0;
+}
+.pricing .pricing-plans .pricing-plan .foot .buy-plan-link::before {
+  content:"";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: var(--main-color);
+  transition: 0.3s;
+  z-index: -1;
+}
+.pricing .pricing-plans .pricing-plan .foot .buy-plan-link:hover {
+  color: white;
+}
+.pricing .pricing-plans .pricing-plan .foot .buy-plan-link:hover::before{
+  width: 100%;
+  height: 100%;
+}
+.pricing .contact-text {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: normal;
+  line-height: 1.7;
+}
+.pricing .contact-link {
+  color: white;
+  width: fit-content;
+  padding: 15px 40px;
+  background-color: var(--main-color);
+  display: block;
+  margin: 0 auto;
+  z-index: 0;
+}
+
+/* End Pricing section */
