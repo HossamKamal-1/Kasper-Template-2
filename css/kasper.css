@@ -1049,5 +1049,102 @@ header .form i {
     padding-right: 10px;
   }
 }
-
 /* End Subscribe section */
+/* Start Contact us section */
+.contact-us {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.contact-us .container{
+  
+}
+.contact-us .container .contact-us-content{
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .contact-us .container .contact-us-content {
+    flex-direction: column;
+  }
+  
+}
+.contact-us .container .contact-us-content form{
+  flex-basis: 70%;
+}
+.contact-us .container .contact-us-content form .contact-input {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  caret-color: var(--main-color);
+  border: 1px solid #aaa;
+}
+.contact-us .container .contact-us-content form .contact-input::placeholder {
+  text-transform: uppercase;
+}
+.contact-us .container .contact-us-content form .contact-input:focus {
+  outline: none;
+}
+
+.contact-us .container .contact-us-content form textarea.contact-input {
+  height: 200px;
+}
+.contact-us .container .contact-us-content form input[type="submit"] {
+  display: flex;
+  margin-left: auto;
+  background-color: var(--main-color);
+  border: none;
+  padding: 15px 25px;
+  color: white;
+  text-transform: uppercase;
+}
+.contact-us .container .contact-us-content .contact-text{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+  gap: 60px;
+}
+@media (max-width: 767px) {
+  .contact-us .container .contact-us-content .contact-text {
+    order: -1;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0;
+    margin-bottom: 20px;
+  }
+  .contact-us .container .contact-us-content .contact-text .phones,
+  .contact-us .container .contact-us-content .contact-text .address
+  {
+    flex-basis: 40%;
+  }
+}
+@media (max-width: 280px) {
+  .contact-us .container .contact-us-content .contact-text {
+    justify-content: space-between;
+  }
+  .contact-us .container .contact-us-content .contact-text .phones
+  {
+    flex-basis: 49%;
+  }
+  .contact-us .container .contact-us-content .contact-text .address {
+    flex-basis: 43%;
+  }
+}
+.contact-us .container .contact-us-content .contact-text > div > h4{
+  color:#777;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+.contact-us .container .contact-us-content .contact-text .phones span {
+  display: block;
+  margin-bottom: 10px;
+  color: #777;
+}
+.contact-us .container .contact-us-content .contact-text address {
+  line-height: 1.8;
+  font-style: normal;
+  color: #777;
+}
+
+/* End Contact us section */
