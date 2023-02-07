@@ -459,11 +459,16 @@ header .form i {
   justify-content: center;
   text-transform: uppercase;
   margin-bottom: 20px;
+  gap: 5px;
 }
 .portfolio .shuffle li {
   padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
 }
-.portfolio .shuffle li.active {
+.portfolio .shuffle li.active,
+.portfolio .shuffle li:hover {
   background-color: var(--main-color);
   color: white;
 }
@@ -475,6 +480,11 @@ header .form i {
   position: relative;
   overflow: hidden;
   font-size: 0; /* to fix image container fontsize problem */
+  transition: transform 0.5s;
+}
+.portfolio .image-container .box.shrink {
+  transform-origin: bottom center;
+  transform: scale(0);
 }
 @media (min-width: 767px) {
   .portfolio .image-container .box {
@@ -486,6 +496,7 @@ header .form i {
     flex-basis: 25%;
   }
 }
+
 @media (max-width: 280px) {
   .portfolio .shuffle li {
     padding: 5px;
